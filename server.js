@@ -8,7 +8,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 
-const dbUri= 'mongodb+srv://Ashish:Ashish123@cluster0.luvis.mongodb.net/UrlShortner?retryWrites=true&w=majority';
+const dbUri= process.env.DB_URI;
 
 mongoose.connect(dbUri, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result)=>{       
